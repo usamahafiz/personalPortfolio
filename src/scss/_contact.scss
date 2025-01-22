@@ -1,0 +1,80 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: url('../assets/progress\ 3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    padding: 1rem;
+    overflow-x: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(31, 31, 237, 0.7);
+        z-index: 0;
+    }
+
+    .contact-card {
+        margin-top: 1rem;
+        width: 90%;
+        padding: 1.5rem;
+        max-width: 700px;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 6px;
+
+        .contact-info {
+            margin-bottom: 1rem;
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                margin-bottom: 0.5rem;
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    margin-right: 0.5rem;
+                }
+
+            }
+
+            .social-icons {
+                margin-top: 0.5rem;
+                display: flex;
+                gap: 0.75rem;
+
+                a {
+                    font-size: 24px;
+                    color: #1d3557;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #477dc9;
+                    }
+                }
+            }
+        }
+
+
+        .form-section {
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

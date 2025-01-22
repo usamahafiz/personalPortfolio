@@ -1,0 +1,103 @@
+$primary-color: #1d3557;
+$text-color: #ffffff;
+$overlay-color:   rgba(63, 63, 230, 0.7);
+
+
+
+.testimonial-section {
+    background-image: url('../assets/feedback\ 1.jpg'); // Replace with your background image URL
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+    color: $text-color;
+    position: relative;
+    overflow: hidden;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $overlay-color; // Apply blue overlay
+      z-index: 1;
+    }
+    .container {
+        position: relative;
+        z-index: 2; // Ensure content is above the overlay
+      }
+    
+      .testimonial-carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+    
+        .testimonial-item {
+          flex: 0 0 100%;
+          max-width: 100%;
+          transition: transform 0.5s ease;
+          text-align: center;
+          opacity: 0;
+          transform: scale(0.8);
+          &.active {
+            opacity: 1;
+            transform: scale(1);
+          }
+    
+          i {
+            color: $text-color;
+            margin-bottom: 20px;
+          }
+    
+          h3 {
+            font-weight: bold;
+            margin-top: 15px;
+          }
+    
+          p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+          
+          // Adjust font size for medium screens
+        @media (max-width: 992px) {
+          font-size: 1rem;
+        }
+
+        // Adjust font size for small screens
+        @media (max-width: 576px) {
+          font-size: 0.9rem;
+        }
+        }
+        }
+      }
+    
+      .arrows {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+    
+        .prev, .next {
+          pointer-events: all;
+          font-size: 2rem;
+          cursor: pointer;
+          color: $text-color;
+          transition: color 0.3s ease;
+    
+          &:hover {
+            color: lighten($primary-color, 10%);
+          }
+        }
+      }
+
+}
+
